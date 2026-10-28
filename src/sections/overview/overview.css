@@ -1,0 +1,588 @@
+/* Overview dashboard (Figma 10210:4904 / 10210:9869). Every value is a cake& token.
+   Figma CE type scale → cake&: H2 24 → title, H3 20 → subtitle, Subtitle1/Body1 16 → subject,
+   Body2/Subtitle2 14 → body, Caption 12 → caption. */
+
+.ov-page {
+  min-width: 0;
+}
+
+/* Prototype-only data switcher (not in Figma). */
+.ov-proto {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-200);
+  flex-wrap: wrap;
+}
+
+/* ── Layout ─────────────────────────────────────────────────────── */
+
+.ov-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-500);
+  min-width: 0;
+}
+
+.ov-top > :first-child {
+  flex: 1.45 1 calc(var(--space-1000) * 6.5);
+  min-width: 0;
+}
+
+.ov-side {
+  flex: 1 1 calc(var(--space-1000) * 5.5);
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-500);
+}
+
+.ov-card {
+  min-width: 0;
+}
+
+.ov-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-500);
+  padding: var(--space-500);
+  min-width: 0;
+}
+
+/* Outlined sub-panel inside a card (Figma bordered frames). */
+.ov-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-100);
+  padding: var(--space-300);
+  border: var(--stroke-100) solid var(--color-stroke-border);
+  border-radius: var(--radius-50);
+  background: var(--color-surfaces-container);
+  min-width: 0;
+}
+
+.ov-panel--roomy {
+  gap: var(--space-500);
+  padding: var(--space-500);
+}
+
+/* ── Type ───────────────────────────────────────────────────────── */
+
+.ov-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-050);
+  min-width: 0;
+}
+
+.ov-head__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-300);
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.ov-h2,
+.ov-h3,
+.ov-subtitle2,
+.ov-cats__head {
+  margin: 0;
+  color: var(--color-text-icon-primary);
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.ov-h2 {
+  font-size: var(--type-size-title);
+  font-weight: var(--font-weight-bold);
+}
+
+.ov-h3 {
+  font-size: var(--type-size-subject);
+  font-weight: var(--font-weight-medium);
+}
+
+.ov-subtitle2 {
+  font-size: var(--type-size-body);
+  font-weight: var(--font-weight-medium);
+}
+
+.ov-subtitle {
+  margin: 0;
+  font-size: var(--type-size-body);
+  color: var(--color-text-icon-placeholder);
+}
+
+.ov-body1,
+.ov-body2 {
+  margin: 0;
+  color: var(--color-text-icon-primary);
+  overflow-wrap: anywhere;
+}
+
+.ov-body1 {
+  font-size: var(--type-size-subject);
+}
+
+.ov-body2 {
+  font-size: var(--type-size-body);
+  color: var(--color-text-icon-secondary);
+}
+
+.ov-caption {
+  margin: 0;
+  font-size: var(--type-size-caption);
+  color: var(--color-text-icon-secondary);
+}
+
+.ov-muted {
+  color: var(--color-text-icon-placeholder);
+}
+
+.ov-link {
+  color: var(--color-primary-primary);
+  text-decoration: none;
+}
+
+.ov-link:hover {
+  text-decoration: underline;
+}
+
+.ov-link:focus-visible {
+  outline: var(--stroke-200) solid var(--color-primary-primary);
+  outline-offset: var(--space-025);
+}
+
+.ov-inline-icon {
+  width: var(--space-300);
+  height: var(--space-300);
+  margin-left: var(--space-025);
+  vertical-align: text-bottom;
+}
+
+.ov-label-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-050);
+  min-width: 0;
+}
+
+.ov-info {
+  width: var(--space-300);
+  height: var(--space-300);
+  color: var(--color-text-icon-secondary);
+  display: block;
+}
+
+.ov-tip-title {
+  display: block;
+  font-weight: var(--font-weight-bold);
+}
+
+/* ── Account Summary ────────────────────────────────────────────── */
+
+.ov-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-100);
+  min-width: 0;
+}
+
+.ov-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-300) var(--space-500);
+  min-width: 0;
+}
+
+.ov-metric {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-050);
+  min-width: 0;
+}
+
+.ov-metric__label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-050);
+  font-size: var(--type-size-subject);
+  color: var(--color-text-icon-secondary);
+}
+
+.ov-metric__value {
+  font-size: var(--type-size-title);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-icon-primary);
+}
+
+.ov-trend {
+  display: flex;
+  align-items: center;
+  gap: var(--space-100);
+  font-size: var(--type-size-body);
+}
+
+.ov-trend svg {
+  width: var(--space-400);
+  height: var(--space-400);
+  flex-shrink: 0;
+}
+
+.ov-trend--up {
+  color: var(--color-success-success);
+}
+
+.ov-trend--down {
+  color: var(--color-error-error);
+}
+
+/* ── Account Insights ───────────────────────────────────────────── */
+
+.ov-insight-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 var(--space-300) 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-300);
+}
+
+.ov-insight {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-100);
+  min-width: 0;
+}
+
+.ov-insight__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-500);
+  min-width: 0;
+}
+
+.ov-insight__text {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  font-size: var(--type-size-subject);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-icon-secondary);
+  overflow-wrap: anywhere;
+}
+
+.ov-insight__action {
+  flex-shrink: 0;
+}
+
+.ov-insight__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-050);
+  font-size: var(--type-size-caption);
+  color: var(--color-text-icon-placeholder);
+}
+
+/* ── Account Actions ────────────────────────────────────────────── */
+
+.ov-actions {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.ov-actions > li {
+  display: flex;
+  flex-direction: column;
+}
+
+.ov-action {
+  all: unset;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--space-300);
+  width: 100%;
+  padding: var(--space-200) var(--space-100);
+  border-radius: var(--radius-50);
+  cursor: pointer;
+  color: var(--color-text-icon-primary);
+  font-family: var(--font-family);
+}
+
+.ov-action:hover {
+  background: var(--color-secondary-secondary-overlay);
+}
+
+.ov-action:focus-visible {
+  outline: var(--stroke-200) solid var(--color-primary-primary);
+  outline-offset: calc(var(--stroke-200) * -1);
+}
+
+.ov-action__count {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: var(--space-700);
+  height: var(--space-700);
+  border-radius: var(--radius-1000);
+  background: var(--color-badge-yellow-light);
+  border: var(--stroke-100) solid var(--color-badge-amber);
+  font-size: var(--type-size-subject);
+  font-weight: var(--font-weight-medium);
+}
+
+.ov-action__text {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-050);
+}
+
+.ov-action__title {
+  font-size: var(--type-size-subject);
+  font-weight: var(--font-weight-medium);
+  overflow-wrap: anywhere;
+}
+
+.ov-action__chev {
+  flex-shrink: 0;
+  width: var(--space-500);
+  height: var(--space-500);
+  color: var(--color-text-icon-secondary);
+}
+
+/* ── AI callouts ────────────────────────────────────────────────── */
+
+/* Figma paints these with the CE AI gradient; cake& has no gradient token. */
+.ov-ai {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-100);
+  padding: var(--space-300);
+  border-radius: var(--radius-50);
+  background: var(--color-badge-indigo-light);
+  min-width: 0;
+}
+
+.ov-ai__icon {
+  flex-shrink: 0;
+  width: var(--space-400);
+  height: var(--space-400);
+  color: var(--color-primary-primary);
+}
+
+.ov-ai__stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-300);
+  min-width: 0;
+}
+
+/* Accordion ships a max-width; let it fill the panel like Figma. */
+.ov-who {
+  min-width: 0;
+  width: 100%;
+  max-width: none;
+}
+
+/* ── Charts + legends ───────────────────────────────────────────── */
+
+.ov-bar {
+  width: 100%;
+  height: var(--space-600);
+  min-width: 0;
+}
+
+.ov-swatch {
+  display: inline-block;
+  flex-shrink: 0;
+  width: var(--space-100);
+  height: var(--space-100);
+  border-radius: var(--radius-1000);
+}
+
+.ov-legend,
+.ov-cats__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.ov-legend__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto calc(var(--space-1000) * 0.75);
+  align-items: center;
+  column-gap: var(--space-700);
+  min-height: var(--space-600);
+  padding: 0 var(--space-050);
+  border-radius: var(--radius-50);
+  font-size: var(--type-size-body);
+  color: var(--color-text-icon-secondary);
+}
+
+.ov-legend__row[data-active] {
+  background: var(--color-secondary-secondary-overlay);
+}
+
+.ov-legend__name {
+  display: flex;
+  align-items: center;
+  gap: var(--space-050);
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.ov-legend__num,
+.ov-legend__pct {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.ov-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-500);
+  min-width: 0;
+}
+
+.ov-stat {
+  flex: 1 1 calc(var(--space-1000) * 1.6);
+  gap: var(--space-050);
+  padding: var(--space-100) var(--space-300);
+}
+
+.ov-stat__value {
+  font-size: var(--type-size-title);
+  font-weight: var(--font-weight-bold);
+}
+
+.ov-stat__action {
+  margin-top: auto;
+  margin-left: calc(var(--space-100) * -1);
+}
+
+/* ── Share of Wallet ────────────────────────────────────────────── */
+
+.ov-sow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-500);
+  min-width: 0;
+}
+
+.ov-sow__col {
+  flex: 1 1 calc(var(--space-1000) * 5);
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-500);
+}
+
+.ov-breakdown {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-100);
+  min-width: 0;
+}
+
+.ov-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--space-050);
+}
+
+.ov-hint {
+  display: flex;
+  align-items: center;
+  gap: var(--space-050);
+  margin: 0;
+  font-size: var(--type-size-body);
+  color: var(--color-text-icon-secondary);
+}
+
+.ov-hint svg {
+  width: var(--space-300);
+  height: var(--space-300);
+  flex-shrink: 0;
+}
+
+.ov-cats {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-300);
+  padding: var(--space-300);
+  border: var(--stroke-100) solid var(--color-stroke-border);
+  border-radius: var(--radius-50);
+  min-width: 0;
+}
+
+.ov-cats__head {
+  font-size: var(--type-size-subject);
+  font-weight: var(--font-weight-medium);
+  padding-bottom: var(--space-300);
+  border-bottom: var(--stroke-100) solid var(--color-stroke-border);
+}
+
+.ov-comp {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-300);
+}
+
+.ov-comp > li {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-050);
+  min-width: 0;
+}
+
+/* ── Empty state ────────────────────────────────────────────────── */
+
+.ov-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-050);
+  padding: var(--space-900) var(--space-300);
+  text-align: center;
+}
+
+.ov-empty__icon {
+  width: var(--space-700);
+  height: var(--space-700);
+  color: var(--color-text-icon-placeholder);
+  margin-bottom: var(--space-100);
+}
+
+.ov-empty__title {
+  margin: 0;
+  font-size: var(--type-size-body);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-icon-secondary);
+}
+
+.ov-empty__hint {
+  margin: 0;
+  font-size: var(--type-size-caption);
+  color: var(--color-text-icon-placeholder);
+}

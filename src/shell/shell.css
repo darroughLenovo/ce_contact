@@ -1,0 +1,220 @@
+/* App chrome for the Customer Engage prototype. Every value is a cake& token. */
+
+body {
+  margin: 0;
+  background: var(--color-surfaces-canvas);
+  color: var(--color-text-icon-primary);
+  font-family: var(--font-family);
+}
+
+.ce-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Top nav (Figma "Navbar", 10210:15595) ─────────────────────────── */
+
+.ce-topnav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-surfaces-container);
+}
+
+.ce-topnav__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-500);
+  padding: var(--space-300) var(--space-500);
+}
+
+.ce-topnav__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-300);
+  flex-shrink: 0;
+  font-size: var(--type-size-title);
+  font-weight: var(--font-weight-bold);
+  white-space: nowrap;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* The Figma logo asset is drawn vertically and rotated 90° on the canvas. */
+.ce-topnav__logo {
+  width: var(--space-1000);
+  height: var(--space-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.ce-topnav__logo img {
+  transform: rotate(90deg) scale(0.84);
+}
+
+.ce-topnav__search {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-100);
+  flex: 0 1 calc(var(--space-1000) * 8.5);
+  min-width: 0;
+}
+
+.ce-topnav__search > :last-child {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.ce-topnav__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-100);
+  flex-shrink: 0;
+}
+
+.ce-topnav__menu {
+  display: flex;
+  gap: var(--space-500);
+  padding: 0 var(--space-500);
+  border-bottom: var(--stroke-100) solid var(--color-stroke-border-low);
+  overflow-x: auto;
+}
+
+/* Site navigation is links, not tabs — cake& HorizontalTabs is for views of
+   one subject. Underline matches the tab indicator tokens. */
+.ce-topnav__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-100);
+  padding: var(--space-100) var(--space-050);
+  border-bottom: var(--stroke-300) solid transparent;
+  font-size: var(--type-size-subject);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-icon-primary);
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.ce-topnav__link[aria-current='page'] {
+  font-weight: var(--font-weight-bold);
+  border-bottom-color: var(--color-primary-primary);
+}
+
+.ce-topnav__link:focus-visible {
+  outline: var(--stroke-200) solid var(--color-primary-primary);
+  outline-offset: var(--space-025);
+}
+
+/* ── Body: side rail + page ────────────────────────────────────────── */
+
+.ce-body {
+  flex: 1;
+  display: flex;
+  min-width: 0;
+}
+
+.ce-rail {
+  flex-shrink: 0;
+  width: var(--space-900);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-100);
+  padding: var(--space-300) 0;
+  background: var(--color-surfaces-container);
+  border-right: var(--stroke-100) solid var(--color-stroke-border-low);
+}
+
+.ce-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Account header (Figma "Account Header", 10210:15607) ──────────── */
+
+.ce-account {
+  background: var(--color-surfaces-container);
+  border-bottom: var(--stroke-100) solid var(--color-stroke-border-low);
+}
+
+.ce-account__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-500);
+  padding: var(--space-500);
+  border-bottom: var(--stroke-100) solid var(--color-stroke-border-low);
+}
+
+.ce-account__id {
+  min-width: 0;
+}
+
+.ce-account__name {
+  margin: 0;
+  font-size: var(--type-size-page);
+  font-weight: var(--font-weight-bold);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ce-account__meta {
+  margin: 0;
+  font-size: var(--type-size-body);
+  color: var(--color-text-icon-secondary);
+  overflow-wrap: anywhere;
+}
+
+.ce-account__tabs {
+  padding: 0 var(--space-500);
+}
+
+/* ── Page content area ─────────────────────────────────────────────── */
+
+.ce-page {
+  flex: 1;
+  min-width: 0;
+  padding: var(--space-500);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-500);
+}
+
+/* ── Toasts (src/shell/toast.tsx) ──────────────────────────────────── */
+
+.ce-toast-viewport {
+  position: fixed;
+  top: calc(var(--space-1000) + var(--space-800));
+  right: var(--space-500);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-100);
+  width: min(calc(var(--space-1000) * 6), calc(100vw - var(--space-800)));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  outline: none;
+}
+
+/* Screen-reader-only text (legitimately uses 1px + nowrap). */
+.ce-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

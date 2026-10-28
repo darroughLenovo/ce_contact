@@ -1,0 +1,396 @@
+/* Account Details — module-specific styles. Every value is a cake& token. */
+
+/* ── Header controls ────────────────────────────────────────────────── */
+
+.dt-time {
+  flex: 0 1 auto;
+  width: calc(var(--space-1000) * 2.6);
+  min-width: calc(var(--space-1000) * 2.2);
+}
+
+.dt-time--wide {
+  width: calc(var(--space-1000) * 3.3);
+}
+
+.dt-panel__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-300);
+}
+
+.dt-wrap {
+  flex-wrap: wrap;
+}
+
+/* ── Purchase history ───────────────────────────────────────────────── */
+
+.dt-ph-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-500);
+  min-width: 0;
+}
+
+.dt-ph-revenue {
+  flex: 2 1 calc(var(--space-1000) * 7);
+}
+
+.dt-ph-insights {
+  flex: 1 1 calc(var(--space-1000) * 4);
+}
+
+.dt-ph-revenue__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-500);
+  min-width: 0;
+}
+
+.dt-ph-total {
+  flex: 1 1 calc(var(--space-1000) * 2.6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-100);
+  padding: var(--space-300) var(--space-300) 0;
+  min-width: 0;
+}
+
+.dt-mixbar {
+  display: flex;
+  height: var(--space-600);
+  margin: var(--space-100) 0 var(--space-200);
+  border-radius: var(--radius-50);
+  overflow: hidden;
+}
+
+.dt-ph-legend,
+.dt-spend__list,
+.dt-vocpanel__list {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-150);
+}
+
+.dt-ph-legend > div,
+.dt-spend__list > div,
+.dt-vocpanel__list > div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-300);
+  font-size: var(--type-size-body);
+}
+
+.dt-ph-legend dd,
+.dt-spend__list dd,
+.dt-vocpanel__list dd {
+  margin: 0;
+  color: var(--color-text-icon-secondary);
+  white-space: nowrap;
+}
+
+.dt-ph-trend {
+  flex: 2.5 1 calc(var(--space-1000) * 4);
+  gap: var(--space-300);
+  min-width: 0;
+}
+
+.dt-ph-trend__title,
+.dt-chartpanel__title {
+  margin: 0;
+  font-size: var(--type-size-subject);
+  font-weight: var(--font-weight-medium);
+}
+
+.dt-ph-insight {
+  display: flex;
+  gap: var(--space-150);
+}
+
+.dt-ph-insight > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-150);
+  min-width: 0;
+}
+
+.dt-ph-insight .dt-ai__subtitle:not(:first-child) {
+  margin-top: var(--space-300);
+}
+
+.dt-ph-insight__icon {
+  flex-shrink: 0;
+  width: var(--space-500);
+  height: var(--space-500);
+  color: var(--color-primary-primary);
+}
+
+.dt-bullets {
+  margin: 0;
+  padding-left: var(--space-500);
+  font-size: var(--type-size-subject);
+  color: var(--color-text-icon-primary);
+}
+
+.dt-spend {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(calc(var(--space-1000) * 3), 1fr));
+  gap: var(--space-300);
+  align-items: start;
+}
+
+.dt-spend__col {
+  border: var(--stroke-100) solid var(--color-stroke-border);
+  border-radius: var(--radius-100);
+  min-width: 0;
+}
+
+.dt-spend__bg {
+  margin: 0;
+  padding: var(--space-300);
+  font-size: var(--type-size-subject);
+  font-weight: var(--font-weight-medium);
+  border-bottom: var(--stroke-100) solid var(--color-stroke-border);
+}
+
+.dt-spend__list {
+  padding: var(--space-300);
+}
+
+.dt-spend__list dt {
+  font-weight: var(--font-weight-medium);
+}
+
+.dt-spend__empty {
+  margin: 0;
+  padding: var(--space-300);
+  text-align: center;
+  font-size: var(--type-size-caption);
+  color: var(--color-text-icon-placeholder);
+}
+
+.dt-spend__strip {
+  margin: 0;
+  padding: var(--space-300);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(calc(var(--space-1000) * 1.3), 1fr));
+  gap: var(--space-300);
+  font-size: var(--type-size-body);
+}
+
+.dt-spend__strip dt {
+  font-weight: var(--font-weight-medium);
+}
+
+.dt-spend__strip dd {
+  margin: var(--space-100) 0 0;
+  color: var(--color-text-icon-secondary);
+}
+
+/* ── Charts ─────────────────────────────────────────────────────────── */
+
+.dt-chart {
+  width: 100%;
+  min-width: 0;
+  height: calc(var(--space-1000) * 2.6);
+}
+
+.dt-chart--tall {
+  height: calc(var(--space-1000) * 4.6);
+}
+
+.dt-chartpanel {
+  gap: var(--space-300);
+}
+
+.dt-chartpanel__total {
+  font-size: var(--type-size-body);
+  font-weight: var(--font-weight-medium);
+}
+
+.dt-legends {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-300);
+}
+
+.dt-legend {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-050);
+  font-size: var(--type-size-body);
+  color: var(--color-text-icon-primary);
+}
+
+.dt-swatch {
+  display: inline-block;
+  flex-shrink: 0;
+  width: var(--space-100);
+  height: var(--space-100);
+  border-radius: var(--radius-1000);
+}
+
+.dt-swatch--line {
+  width: var(--space-250);
+  height: var(--stroke-200);
+  border-radius: 0;
+}
+
+.dt-chart-tip {
+  min-width: calc(var(--space-1000) * 2);
+  padding: var(--space-100) var(--space-300);
+  border-radius: var(--radius-100);
+  background: var(--color-surfaces-inverse-container);
+  color: var(--color-text-icon-inverse);
+  box-shadow: var(--elevation-2);
+  font-size: var(--type-size-body);
+}
+
+.dt-chart-tip p {
+  margin: 0;
+}
+
+.dt-chart-tip .dt-chart-tip__title {
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-050);
+}
+
+.dt-chart-tip__row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-500);
+}
+
+/* ── Pipeline ───────────────────────────────────────────────────────── */
+
+.dt-statgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(calc(var(--space-1000) * 1.8), 1fr));
+  gap: var(--space-500);
+}
+
+.dt-tabsbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-300);
+  border-bottom: var(--stroke-100) solid var(--color-stroke-border-low);
+}
+
+.dt-tabsbar .dt-search {
+  margin-bottom: var(--space-100);
+}
+
+.dt-alert {
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Recent orders ──────────────────────────────────────────────────── */
+
+.dt-subrow {
+  display: flex;
+  background: var(--color-surfaces-on-container-high);
+  border-bottom: var(--stroke-100) solid var(--color-stroke-border-low);
+}
+
+.dt-subrow__cell {
+  flex: 1;
+  min-width: 0;
+  padding: var(--space-100) var(--space-500) var(--space-300) var(--space-700);
+}
+
+/* ── CX health ──────────────────────────────────────────────────────── */
+
+.dt-cx-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(calc(var(--space-1000) * 5.5), 1fr));
+  gap: var(--space-500);
+  align-items: start;
+}
+
+.dt-defs {
+  margin: 0;
+  font-size: var(--type-size-body);
+}
+
+.dt-defs dt {
+  font-weight: var(--font-weight-medium);
+}
+
+.dt-defs dd {
+  margin: 0 0 var(--space-100);
+}
+
+.dt-voc {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(calc(var(--space-1000) * 3), 1fr));
+  gap: var(--space-300);
+  align-items: stretch;
+}
+
+.dt-vocpanel {
+  border: var(--stroke-100) solid var(--color-stroke-border);
+  border-radius: var(--radius-100);
+  overflow: hidden;
+  min-width: 0;
+}
+
+.dt-vocpanel__head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-100);
+  margin: 0;
+  padding: var(--space-200) var(--space-300);
+  font-size: var(--type-size-subject);
+  font-weight: var(--font-weight-medium);
+  border-bottom: var(--stroke-100) solid var(--color-stroke-border);
+}
+
+.dt-vocpanel__head svg {
+  width: var(--space-500);
+  height: var(--space-500);
+}
+
+.dt-vocpanel--good .dt-vocpanel__head {
+  background: var(--color-success-success-overlay);
+}
+
+.dt-vocpanel--bad .dt-vocpanel__head {
+  background: var(--color-error-error-overlay);
+}
+
+.dt-vocpanel__body {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-300);
+}
+
+.dt-vocpanel__block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-100);
+  padding: var(--space-300) 0;
+  font-size: var(--type-size-body);
+}
+
+.dt-vocpanel__block:first-child {
+  padding-top: 0;
+  border-bottom: var(--stroke-100) solid var(--color-stroke-border);
+}
+
+.dt-vocpanel__block p {
+  margin: 0;
+}
+
+.dt-vocpanel__label {
+  font-weight: var(--font-weight-medium);
+}

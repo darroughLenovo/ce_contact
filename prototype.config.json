@@ -1,0 +1,40 @@
+{
+  "name": "ce-contacts",
+  "displayName": "Customer Engage",
+  "description": "Customer Engage account workspace (Sprint 7: E2E Experience and UI Consistency) rebuilt on Cake&: overview, account details, contacts, documents, notes, customer brief, account search and executive brief.",
+  "platform": "web",
+  "designSystem": "cake",
+  "status": "draft",
+  "figma": {
+    "fileKey": "Tyfv9iC2Jyh7KU7lZMZMIA",
+    "fileName": "Customer Engage (Review)",
+    "nodes": [
+      "8987:21936"
+    ]
+  },
+  "routes": [
+    "#/overview",
+    "#/contacts",
+    "#/details",
+    "#/documents",
+    "#/notes",
+    "#/customer-brief",
+    "#/account-search",
+    "#/executive-brief"
+  ],
+  "commands": {
+    "dev": "npm run dev",
+    "build": "npm run build",
+    "preview": "npm run preview"
+  },
+  "owners": [
+    "dwest5"
+  ],
+  "verificationStatus": "unverified",
+  "relatedSkills": [
+    "ai-lab/skills/cake/SKILL.md",
+    "ai-lab/skills/cake-prototyping/SKILL.md",
+    "ai-lab/skills/cake-design-check/SKILL.md"
+  ],
+  "notes": "Scaffolded by ai-lab scripts/new-prototype.mjs from the cake-admin/cakev2 starter, then moved out of ai-lab into its own folder. Update Cake& with `npm run cake:update` — never `npm update`, which is silent for a release-URL dependency. Keep verificationStatus honest."
+}

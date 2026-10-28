@@ -1,0 +1,14 @@
+---
+description: Cake& design system — how to build UI in this prototype
+alwaysApply: true
+---
+
+Read [AGENTS.md](./AGENTS.md) before writing any UI.
+
+Props and tokens come from `node_modules/@cake-admin/cakeand/` — `types/` for the
+API, `cakeand.css` for the token names. Before using a component, also read
+`knowledge/components/<name>.cake.json` at the repo root for what it gets wrong.
+
+Never hardcode a color, spacing, radius, or type size — token names are exact and
+an invented one resolves to an empty string with no error. Never add a second UI
+library. Prototype: ce-contacts.
