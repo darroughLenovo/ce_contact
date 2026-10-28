@@ -13,8 +13,8 @@ includes `npm`. No GitHub token, `.npmrc` or registry setup is needed: Cake&
 installs from a public release URL.
 
 ```bash
-git clone <this repo's URL> CE_Contacts
-cd CE_Contacts
+git clone https://github.com/darroughLenovo/ce_contact.git
+cd ce_contact
 npm install
 npm run dev
 ```
